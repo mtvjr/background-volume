@@ -1,0 +1,15 @@
+{
+    "name": "background-volume",
+    "title": "Background Volume - Adds options for background volume",
+    "description": "A module for setting the volume of background videos",
+    "author": "mtvjr (mvollingjr@gmail.com)",
+    "verson": "0.0.1",
+    "minimumCoreVersion": "0.5.5",
+    "compatibleCoreVersion": "0.5.5",
+    "url": "https://github.com/mtvjr/background-volume",
+    "readme": "./README.md",
+    "license": "./LICENSE",
+    "esmodules": [
+        "./scripts/backgroundVolume.mjs"
+    ]
+}
