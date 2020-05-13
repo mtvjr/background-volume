@@ -1,16 +1,24 @@
 export default class Logger {
     // Enumerate the log levels
-    static None = 0;
-    static Low = 2;
-    static Medium = 3;
-    static High = 4;
+    static None = {
+        value: 0,
+        name: "none"
+    }
 
-    static Levels = [
-        "none",
-        "low",
-        "medium",
-        "high"
-    ];
+    static Low = {
+        value = 1,
+        name: "low"
+    }
+
+    static Medium = {
+        value = 2,
+        name: "medium"
+    }
+
+    static High = {
+        value = 3,
+        name: "high"
+    }
 
     static moduleName = "Unnamed Module";
     static debugLevel = 0;
@@ -19,11 +27,11 @@ export default class Logger {
         Logger.moduleName = name;
         this.debugLevel = level;
         
-        this.log(level, `Set log level to ${Logger.Levels[level]}`);
+        this.log(level, `Set log level to ${level.name}`);
     }
 
     static log(level, message) {
-        if (level <= Logger.debugLevel) {
+        if (level.value <= Logger.debugLevel.value) {
             console.log(this.moduleName + ' | ' + message);
         }
     }
