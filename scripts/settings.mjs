@@ -60,8 +60,8 @@ export async function createSceneSlider(sceneConfig, html, data) {
 
     const sliderDiv = $(sliderHTML)[0];
 
-    // Find the 2nd horizontal rule, and add the volume slider before it
-    html.find("hr")[1].before(sliderDiv);
+    // Find the 4th header, and add the volume slider after it
+    html.find("h3")[3].after(sliderDiv);
 
     const sliderInput = html.find("#bvSlider");
 
