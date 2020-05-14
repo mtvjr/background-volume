@@ -2,6 +2,9 @@ import Logger from "./common/logger.mjs"
 import {createSceneSlider} from "./settings.mjs"
 import updateBackgroundVolume from "./volume.mjs";
 
+// Version
+const VERSION = "v0.1.0";
+
 // Target for end users
 const RELEASE = {
     threshold: Logger.High,
@@ -14,7 +17,7 @@ const DEVEL = {
     name: "Devel"
 }
 
-const Target = DEVEL;
+const Target = RELEASE;
 
 // This new ambient slider function calls my update
 // background volume function instead of setting the
@@ -34,7 +37,7 @@ function init() {
         CONFIG.debug.hooks = true;
     }
 
-    Logger.log(Logger.Low, `Background Volume is initialized (${Target.name} target)`);
+    Logger.log(Logger.High, `Background Volume ${VERSION} is initialized (${Target.name} target)`);
 }
 
 function ready() {
