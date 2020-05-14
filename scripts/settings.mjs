@@ -47,6 +47,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
 
     const sliderHTML = await renderTemplate(Templates.SceneSlider, {
         label: "Background Volume",
+        notes: "Change the volume of the Background Image, if it is a video.",
         value: oldVolume,
         max: 1,
         min: 0,
