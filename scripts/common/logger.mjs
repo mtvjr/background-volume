@@ -1,6 +1,6 @@
 class LogLevel {
-    #_name = "";
-    #_value = 0;
+    _name = "";
+    _value = 0;
 
     /**
      * Create a LogLevel object
@@ -54,12 +54,12 @@ export default class Logger {
     /**
      * Stores the name of the module
      */
-    static #moduleName = "Unnamed Module";
+    static moduleName = "Unnamed Module";
 
     /**
      * The current debug threshold
      */
-    static #threshold = Logger.None;
+    static threshold = Logger.None;
 
     /**
      * Initializes the Logger object with a mod name and a log level
@@ -70,7 +70,7 @@ export default class Logger {
         Logger.moduleName = name;
         Logger.threshold = threshold;
         
-        this.log(level, `Set log level to ${level.name}`);
+        this.log(threshold, `Set log threshold to ${threshold.name}`);
     }
 
     /**
