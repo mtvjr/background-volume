@@ -5,6 +5,10 @@ import Templates from "./templates.mjs"
 const MODULE_NAME = "background-volume";
 const VOLUME_FLAG = "volume";
 
+/**
+ * Get the background volume of a scene
+ * @return The volume of the scene
+ */
 export function getVolume(scene) {
     const sceneVolume = scene.getFlag(MODULE_NAME, VOLUME_FLAG);
     if (typeof sceneVolume !== 'undefined') {
@@ -15,15 +19,26 @@ export function getVolume(scene) {
     }
 }
 
+/**
+ * Set the background volume setting for a scene
+ * @param scene - The scene to modify
+ * @param volume - The new background volume of the scene
+ */
 export async function setVolume(scene, volume) {
     if (volume == scene.getFlag(MODULE_NAME, VOLUME_FLAG)) {
         Logger.log(Logger.Low, `Volume of ${scene.name} has not changed.`);
         return;
     }
-    Logger.log(Logger.High, `Setting background volume of ${scene.name} (${scene._id}) to ${volume} of type ${typeof volume}`);
+    Logger.log(Logger.High, `Setting background volume of ${scene.name} to ${volume}`);
     await scene.setFlag(MODULE_NAME, VOLUME_FLAG, volume);
 }
 
+/**
+ * Adds a Background Volume scene slider to a SceneConfig
+ * @param {SceneConfig} sceneConfig - A SceneConfig object
+ * @param html - The JQuery HTML object representing the scene config
+ * @param data - The data used to populate sceneConfig
+ */
 export async function createSceneSlider(sceneConfig, html, data) {
     Logger.log(Logger.Medium, "Creating scene slider");
 
@@ -39,7 +54,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
     });
 
     if (sliderHTML == "") {
-        Logger.log(Logger.High, "Error parsing slider template");
+        Logger.log(Logger.High, "Error parsing slider template. Unable to add slider");
         return;
     }
 

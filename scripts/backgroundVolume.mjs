@@ -1,16 +1,16 @@
 import Logger from "./common/logger.mjs"
-import {setVolume, createSceneSlider} from "./settings.mjs"
+import {createSceneSlider} from "./settings.mjs"
 import updateBackgroundVolume from "./volume.mjs";
 
 // Target for end users
 const RELEASE = {
-    level: Logger.Low,
+    threshold: Logger.High,
     name: "Release"
 }
 
 // Target for running in foundry as a developer
 const DEVEL = {
-    logLevel: Logger.High,
+    threshold: Logger.Low,
     name: "Devel"
 }
 
@@ -27,7 +27,7 @@ function newAmbientOnChange(volume) {
 }
 
 function init() {
-    Logger.init("Background Volume", Target.logLevel);
+    Logger.init("Background Volume", Target.threshold);
 
     if (Target == DEVEL) {
         // Enable hook debugging
@@ -51,9 +51,9 @@ function ready() {
 
 function onSceneUpdate(data, id, options) {
     // If the active scene was updated, update the background volume
-    Logger.log(Logger.Low, "Scene was updated");
+    Logger.log(Logger.Low, "A scene was updated");
     if (game.scenes.active.id == id._id) {
-        Logger.log(Logger.Low, "Active scene was updated");
+        Logger.log(Logger.High, "Received active scene update");
         updateBackgroundVolume();
     }
 }
