@@ -1,23 +1,12 @@
 import Logger from "./common/logger.mjs"
+import {getVolume} from "./settings.mjs"
 
-function getBackgroundVolume() {
-    const scene = game.scenes.active.options;
-
-    if (scene.hasOwnProperty("backgroundVolume")) {
-        Logger.log(Logger.Low, `Retrieved volume ${scene.backgroundVolume}`);
-        return scene.backgroundVolume;
-    }
-
-    Logger.log(Logger.Low, "Unable to find background volume for the scene.");
-    return 1;
-}
-
-export default function UpdateBackgroundVolume() {
+export default function updateBackgroundVolume() {
     if (canvas.ready && canvas.background.isVideo) {
         const ambient = game.settings.get("core", "globalAmbientVolume");
-        const scene = getBackgroundVolume();
+        const background = getVolume(game.scenes.active);
 
-        const newVolume = ambient * scene;
+        const newVolume = ambient * background;
 
         Logger.log(Logger.High, `Setting volume to ${newVolume}.`)
         canvas.background.source.volume = newVolume;

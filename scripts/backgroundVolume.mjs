@@ -1,6 +1,6 @@
 import Logger from "./common/logger.mjs"
-import {RegisterSettings, OnSceneClose, CreateSceneSlider} from "./settings.mjs"
-import UpdateBackgroundVolume from "./volume.mjs";
+import {setVolume, createSceneSlider} from "./settings.mjs"
+import updateBackgroundVolume from "./volume.mjs";
 
 // Target for end users
 const RELEASE = {
@@ -16,11 +16,23 @@ const DEVEL = {
 
 const Target = DEVEL;
 
+// This new ambient slider function calls my update
+// background volume function instead of setting the
+// volume equal to the ambient volume
+function newAmbientOnChange(volume) {
+    updateBackgroundVolume();
+    if (canvas.ready) {
+        canvas.sounds.update();
+    }
+}
+
 function init() {
     Logger.init("Background Volume", Target.logLevel);
 
-    // Enable hook debugging
-    // CONFIG.debug.hooks = true;
+    if (Target == DEVEL) {
+        // Enable hook debugging
+        CONFIG.debug.hooks = true;
+    }
 
     Logger.log(Logger.Low, `Background Volume is initialized (${Target.name} target)`);
 }
@@ -28,15 +40,25 @@ function init() {
 function ready() {
     Logger.log(Logger.Low, "Background Volume is ready");
 
-    RegisterSettings();
+    // Replace the default ambient volume changed function with my own
+    game.settings.settings.get("core.globalAmbientVolume").onChange = newAmbientOnChange;
 
-    UpdateBackgroundVolume();
+    updateBackgroundVolume();
 
     // Register hook to catch future updates
-    Hooks.on("canvasReady", UpdateBackgroundVolume);
+    Hooks.on("canvasReady", updateBackgroundVolume);
+}
+
+function onSceneUpdate(data, id, options) {
+    // If the active scene was updated, update the background volume
+    Logger.log(Logger.Low, "Scene was updated");
+    if (game.scenes.active.id == id._id) {
+        Logger.log(Logger.Low, "Active scene was updated");
+        updateBackgroundVolume();
+    }
 }
 
 Hooks.on("init", init);
 Hooks.on("ready", ready);
-Hooks.on("renderSceneConfig", CreateSceneSlider);
-Hooks.on("closeSceneConfig", OnSceneClose);
+Hooks.on("renderSceneConfig", createSceneSlider);
+Hooks.on("updateScene", onSceneUpdate);
