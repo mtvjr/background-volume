@@ -6,17 +6,17 @@ export default class Logger {
     }
 
     static Low = {
-        value = 1,
+        value: 1,
         name: "low"
     }
 
     static Medium = {
-        value = 2,
+        value: 2,
         name: "medium"
     }
 
     static High = {
-        value = 3,
+        value: 3,
         name: "high"
     }
 
