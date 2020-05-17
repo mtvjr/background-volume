@@ -2,7 +2,15 @@
     "name": "background-volume",
     "title": "Background Volume - Sliders for Scenes",
     "description": "A module for setting the volume of background videos",
-    "author": "mtvjr (mvollingjr@gmail.com)",
+    "authors": [
+        {
+            "name": "Michael Volling",
+            "email": "mvollingjr@gmail.com"
+        },
+        {
+            "name": "Yuan Qu (Chinese Translation)"
+        }
+    ],
     "version": "0.1.1",
     "minimumCoreVersion": "0.5.5",
     "compatibleCoreVersion": "0.5.7",
@@ -13,6 +21,11 @@
     "download": "https://github.com/mtvjr/background-volume/archive/master.zip",
     "esmodules": ["./scripts/backgroundVolume.mjs"],
     "languages": [
+        {
+            "lang": "cn",
+            "name": "中文",
+            "path": "lang/cn.json"
+        },
         {
             "lang": "en",
             "name": "English",
