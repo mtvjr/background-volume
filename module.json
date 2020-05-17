@@ -2,6 +2,7 @@
     "name": "background-volume",
     "title": "Background Volume - Sliders for Scenes",
     "description": "A module for setting the volume of background videos",
+    "author": "Michael Volling",
     "authors": [
         {
             "name": "Michael Volling",
