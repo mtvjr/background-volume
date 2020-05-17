@@ -9,6 +9,9 @@
             "email": "mvollingjr@gmail.com"
         },
         {
+            "name": "Nathan Wukasch (Hindi Translation)"
+        },
+        {
             "name": "Yuan Qu (Chinese Translation)"
         }
     ],
@@ -31,6 +34,11 @@
             "lang": "en",
             "name": "English",
             "path": "lang/en.json"
+        },
+        {
+            "lang": "hi",
+            "name": "हिन्दी",
+            "path": "lang/hi.json"
         }
     ]
 }
