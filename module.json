@@ -11,5 +11,12 @@
     "license": "https://github.com/mtvjr/background-volume/blob/master/LICENSE",
     "manifest": "https://raw.githubusercontent.com/mtvjr/background-volume/master/module.json",
     "download": "https://github.com/mtvjr/background-volume/archive/master.zip",
-    "esmodules": ["./scripts/backgroundVolume.mjs"]
+    "esmodules": ["./scripts/backgroundVolume.mjs"],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ]
 }
