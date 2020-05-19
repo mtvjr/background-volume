@@ -7,7 +7,7 @@ import {getVolume} from "./settings.mjs"
 export default function updateBackgroundVolume() {
     if (canvas.ready && canvas.background.isVideo) {
         const ambient = game.settings.get("core", "globalAmbientVolume");
-        const background = getVolume(game.scenes.active);
+        const background = getVolume(game.scenes.viewed);
 
         const newVolume = ambient * background;
 

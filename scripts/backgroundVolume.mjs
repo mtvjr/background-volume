@@ -3,7 +3,7 @@ import {createSceneSlider} from "./settings.mjs"
 import updateBackgroundVolume from "./volume.mjs";
 
 // Version
-const VERSION = "v1.0.1";
+const VERSION = "v1.0.2";
 
 // Target for end users
 const RELEASE = {
@@ -53,10 +53,10 @@ function ready() {
 }
 
 function onSceneUpdate(data, id, options) {
-    // If the active scene was updated, update the background volume
+    // If the viewed scene was updated, update the background volume
     Logger.log(Logger.Low, "A scene was updated");
-    if (game.scenes.active.id == id._id) {
-        Logger.log(Logger.High, "Received active scene update");
+    if (game.scenes.viewed.id == id._id) {
+        Logger.log(Logger.High, "Received viewed scene update");
         updateBackgroundVolume();
     }
 }
