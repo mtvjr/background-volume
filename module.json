@@ -12,6 +12,9 @@
             "name": "Nathan Wukasch (Hindi Translation)"
         },
         {
+            "name": "Sebastian Will (German Translation)"
+        },
+        {
             "name": "Yuan Qu (Chinese Translation)"
         }
     ],
@@ -29,6 +32,11 @@
             "lang": "cn",
             "name": "中文",
             "path": "lang/cn.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "lang/de.json"
         },
         {
             "lang": "en",
