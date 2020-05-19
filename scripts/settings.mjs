@@ -34,6 +34,15 @@ export async function setVolume(scene, volume) {
 }
 
 /**
+ * Get the localization text for a key.
+ * @param {String} key - The localization key, not including the module name
+ * @return {String} - The localization text.
+ */
+function localize(key) {
+    return game.i18n.localize(`${MODULE_NAME}.${key}`);
+}
+
+/**
  * Adds a Background Volume scene slider to a SceneConfig
  * @param {SceneConfig} sceneConfig - A SceneConfig object
  * @param html - The JQuery HTML object representing the scene config
@@ -46,8 +55,8 @@ export async function createSceneSlider(sceneConfig, html, data) {
     const oldVolume = getVolume(scene);
 
     const sliderHTML = await renderTemplate(Templates.SceneSlider, {
-        label: "Background Volume",
-        notes: "Change the volume of the Background Image, if it is a video.",
+        label: localize("slider-title"),
+        notes: localize("slider-note"),
         value: oldVolume,
         max: 1,
         min: 0,
