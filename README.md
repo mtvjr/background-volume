@@ -14,7 +14,17 @@ The final background volume is controlled by both the ambient slider and the sce
 
 ## How to Install
 
+### Module Browser
+
+Background Volume is now in the Foundry VTT module browser! Click on the `install` button to install the latest version.
+
+### Latest Manifest
+
 Add this module using this manifest link: https://raw.githubusercontent.com/mtvjr/background-volume/master/module.json
+
+### Install a previous versions
+
+Manifest links are available in the releases sections for releases after 1.0.2.
 
 ## I have a problem, how do I get in contact?
 
