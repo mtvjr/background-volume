@@ -25,7 +25,7 @@
     "readme": "https://github.com/mtvjr/background-volume/blob/master/README.md",
     "license": "https://github.com/mtvjr/background-volume/blob/master/LICENSE",
     "manifest": "https://raw.githubusercontent.com/mtvjr/background-volume/master/module.json",
-    "download": "https://github.com/mtvjr/background-volume/archive/master.zip",
+    "download": "https://github.com/mtvjr/background-volume/archive/v1.0.2.zip",
     "esmodules": ["./scripts/backgroundVolume.mjs"],
     "languages": [
         {
