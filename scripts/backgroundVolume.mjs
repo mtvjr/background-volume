@@ -23,8 +23,8 @@ const Target = RELEASE;
 // background volume function instead of setting the
 // volume equal to the ambient volume
 function newAmbientOnChange(volume) {
-    updateBackgroundVolume();
     if (canvas.ready) {
+        updateBackgroundVolume();
         canvas.sounds.update();
     }
 }
