@@ -19,16 +19,6 @@ const DEVEL = {
 
 const Target = RELEASE;
 
-// This new ambient slider function calls my update
-// background volume function instead of setting the
-// volume equal to the ambient volume
-function newAmbientOnChange(volume) {
-    if (canvas.ready) {
-        updateBackgroundVolume();
-        canvas.sounds.update();
-    }
-}
-
 function init() {
     Logger.init("Background Volume", Target.threshold);
 
@@ -43,8 +33,14 @@ function init() {
 function ready() {
     Logger.log(Logger.Low, "Background Volume is ready");
 
-    // Replace the default ambient volume changed function with my own
-    game.settings.settings.get("core.globalAmbientVolume").onChange = newAmbientOnChange;
+    // Have the updateBackgroundVolume function be called when the ambient volume changes
+    let orig = game.settings.settings.get("core.globalAmbientVolume").onChange;
+    game.settings.settings.get("core.globalAmbientVolume").onChange = (...args) => {
+        Logger.log(Logger.Low, "Ambient volume changed.");
+        let ret = orig.apply(this, args);
+        updateBackgroundVolume();
+        return ret;
+    }
 
     updateBackgroundVolume();
 
