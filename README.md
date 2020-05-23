@@ -28,4 +28,4 @@ Manifest links are available in the releases sections for releases after 1.0.2.
 
 ## I have a problem, how do I get in contact?
 
-Please ping mtvjr#4598 on [Foundry's Discord](https://discordapp.com/invite/DDBZUDf) in the #module-discussions channel or open up an issue on GitHub.
+Please ping mtvjr#4598 on [Foundry's Discord](https://discordapp.com/invite/DDBZUDf) in the #modules channel or open up an issue on GitHub.
