@@ -1,4 +1,7 @@
-# Background Volume ![Foundry VTT: 0.6.0](https://img.shields.io/badge/Foundry%20VTT-0.6.0-green?style=plastic)
+# Background Volume
+
+![Minimum Foundry Version: 0.5.5](https://img.shields.io/badge/Minimum_Foundry_Version-0.5.5-green?style=plastic)
+![Compatible Foundry Version: 0.6.1](https://img.shields.io/badge/Supported_Foundry_Version-0.6.1-green?style=plastic)
 
 This mod allows the DM to configure the volume of a scene's background in Foundry VTT.
 
