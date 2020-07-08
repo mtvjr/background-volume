@@ -2,8 +2,8 @@ name: Background-Volume CI
 
 on:
   push:
-    branches: [ master ]
-      - 'v*'
+    tags:
+      - v*
 
 jobs:
   build:
