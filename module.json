@@ -47,6 +47,11 @@
             "lang": "hi",
             "name": "हिन्दी",
             "path": "lang/hi.json"
+        },
+        {
+            "lang": "es",
+            "name": "Spanish",
+            "path": "lang/es.json"
         }
     ]
 }
