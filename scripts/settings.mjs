@@ -4,6 +4,7 @@ import Templates from "./templates.mjs"
 
 const MODULE_NAME = "background-volume";
 const VOLUME_FLAG = "volume";
+const SLIDER_ID = "bvSlider";
 
 /**
  * Get the background volume of a scene
@@ -57,6 +58,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
     const sliderHTML = await renderTemplate(Templates.SceneSlider, {
         label: localize("slider-title"),
         notes: localize("slider-note"),
+        id: SLIDER_ID,
         value: oldVolume,
         max: 1,
         min: 0,
@@ -73,7 +75,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
     // Find the 5th header, and add the volume slider the following note
     html.find("header")[4].nextElementSibling.after(sliderDiv);
 
-    const sliderInput = html.find("#bvSlider");
+    const sliderInput = html.find(`#${SLIDER_ID}`);
 
     // Save changes to the slider when the form is being saved
     const form = html.find('form');
