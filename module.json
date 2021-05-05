@@ -9,6 +9,9 @@
             "email": "mvollingjr@gmail.com"
         },
         {
+            "name": "Lozalojo (Spanish Translation)"
+        },
+        {
             "name": "Nathan Wukasch (Hindi Translation)"
         },
         {
@@ -18,14 +21,14 @@
             "name": "Yuan Qu (Chinese Translation)"
         }
     ],
-    "version": "1.1.1",
-    "minimumCoreVersion": "0.5.5",
-    "compatibleCoreVersion": "0.6.5",
+    "version": "1.2.0",
+    "minimumCoreVersion": "0.7.3",
+    "compatibleCoreVersion": "0.7.9",
     "url": "https://github.com/mtvjr/background-volume",
     "readme": "https://github.com/mtvjr/background-volume/blob/master/README.md",
     "license": "https://github.com/mtvjr/background-volume/blob/master/LICENSE",
     "manifest": "https://raw.githubusercontent.com/mtvjr/background-volume/master/module.json",
-    "download": "https://github.com/mtvjr/background-volume/releases/download/v1.1.1/background-volume.zip",
+    "download": "https://github.com/mtvjr/background-volume/releases/download/v1.2.0/background-volume.zip",
     "esmodules": ["./scripts/backgroundVolume.mjs"],
     "languages": [
         {

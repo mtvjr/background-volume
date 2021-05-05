@@ -70,8 +70,8 @@ export async function createSceneSlider(sceneConfig, html, data) {
 
     const sliderDiv = $(sliderHTML)[0];
 
-    // Find the 4th header, and add the volume slider after it
-    html.find("h3")[3].after(sliderDiv);
+    // Find the 5th header, and add the volume slider the following note
+    html.find("header")[4].nextElementSibling.after(sliderDiv);
 
     const sliderInput = html.find("#bvSlider");
 
