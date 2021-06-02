@@ -1,14 +1,7 @@
-# BETA BRANCH
-
-This is a beta branch, as such, it may not work completely.
-
-Broken Items:
-- Global Ambient Volume slider does not adjust the volume of the background instantly, a reload is required.
-
 # Background Volume
 
 ![Minimum Foundry Version: 0.8.5](https://img.shields.io/badge/Minimum_Foundry_Version-0.8.5-green?style=plastic)
-![Compatible Foundry Version: 0.8.5](https://img.shields.io/badge/Supported_Foundry_Version-0.8.5-green?style=plastic)
+![Compatible Foundry Version: 0.8.6](https://img.shields.io/badge/Supported_Foundry_Version-0.8.6-green?style=plastic)
 
 This mod allows the DM to configure the volume of a scene's background in Foundry VTT.
 
