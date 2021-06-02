@@ -11,7 +11,7 @@ export default function updateBackgroundVolume() {
 
         const newVolume = ambient * background;
 
-        Logger.log(Logger.High, `Setting volume to ${newVolume}.`)
-        canvas.background.source.volume = newVolume;
+        Logger.log(Logger.High, `Setting volume to ${newVolume}.`);
+        canvas.background.bgSource.volume = newVolume;
     }
 }
