@@ -72,11 +72,9 @@ export async function createSceneSlider(sceneConfig, html, data) {
 
     const sliderDiv = $(sliderHTML)[0];
 
-    // Find the 3rd form-header, and add the volume slider the following note
-    var notes = html.find(".form-header");
-    var myNote = notes[3];
-    var nextElement = myNote.nextElementSibling;
-    nextElement.after(sliderDiv);
+    // Find the 'Journal Notes' option and add the background volume config option before it
+    // This should place it near the top of the 'Ambience and Atmosphere' section
+    html.find("select[name='journal']").parent().before(sliderDiv);
 
     const sliderInput = html.find(`#${SLIDER_ID}`);
 
