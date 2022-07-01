@@ -74,7 +74,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
 
     // Find the 'Journal Notes' option and add the background volume config option before it
     // This should place it near the top of the 'Ambience and Atmosphere' section
-    html.find("select[name='journal']").parent().before(sliderDiv);
+    html.find("select[name='journal']").parent().before(sliderDiv).before("<hr>");
 
     const sliderInput = html.find(`#${SLIDER_ID}`);
 
