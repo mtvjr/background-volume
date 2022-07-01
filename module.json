@@ -23,7 +23,7 @@
     ],
     "version": "1.4.2",
     "minimumCoreVersion": "0.8.9",
-    "compatibleCoreVersion": "9.233",
+    "compatibleCoreVersion": "10.272",
     "url": "https://github.com/mtvjr/background-volume",
     "readme": "https://github.com/mtvjr/background-volume/blob/master/README.md",
     "license": "https://github.com/mtvjr/background-volume/blob/master/LICENSE",
