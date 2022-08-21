@@ -3,7 +3,7 @@ import {createSceneSlider} from "./settings.mjs"
 import updateBackgroundVolume from "./volume.mjs";
 
 // Version
-const VERSION = "v1.5.0";
+const VERSION = "v1.5.1";
 
 // Target for end users
 const RELEASE = {
