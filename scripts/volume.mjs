@@ -35,7 +35,7 @@ export default function updateBackgroundVolume() {
     const newVolume = ambient * background;
 
     Logger.log(Logger.High, `Setting volume to ${newVolume}.`);
-    if (game.release.isNewer("9.269")) {
+    if (game.release.isGenerationalChange("9.269")) {
         updateVolume_V10(newVolume);
     } else {
         updateVolume_V9(newVolume);
