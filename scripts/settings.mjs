@@ -84,4 +84,7 @@ export async function createSceneSlider(sceneConfig, html, data) {
         const newVolume = parseFloat(sliderInput.val());
         await setVolume(scene, newVolume);
     })
+
+    // Reposition the form to accomidate the new contents
+    sceneConfig.setPosition();
 }
