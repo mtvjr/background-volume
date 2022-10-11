@@ -29,8 +29,14 @@ function updateVolume_V10(newVolume) {
  * Updates the background volume of the active scene
  */
 export default function updateBackgroundVolume() {
+    const scene = game.scenes.viewed;
+    if (scene == undefined) {
+        Logger.log(Logger.High, "Skipping volume update: No active scene.");
+        return;
+    }
+
     const ambient = game.settings.get("core", "globalAmbientVolume");
-    const background = getVolume(game.scenes.viewed);
+    const background = getVolume(scene);
 
     const newVolume = ambient * background;
 
