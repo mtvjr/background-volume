@@ -21,14 +21,14 @@
             "name": "Yuan Qu (Chinese Translation)"
         }
     ],
-    "version": "1.5.3",
+    "version": "1.5.4",
     "minimumCoreVersion": "0.8.9",
     "compatibleCoreVersion": "11.299",
     "url": "https://github.com/mtvjr/background-volume",
     "readme": "https://github.com/mtvjr/background-volume/blob/master/README.md",
     "license": "https://github.com/mtvjr/background-volume/blob/master/LICENSE",
     "manifest": "https://raw.githubusercontent.com/mtvjr/background-volume/master/module.json",
-    "download": "https://github.com/mtvjr/background-volume/releases/download/v1.5.3/background-volume.zip",
+    "download": "https://github.com/mtvjr/background-volume/releases/download/v1.5.4/background-volume.zip",
     "esmodules": ["./scripts/backgroundVolume.mjs"],
     "languages": [
         {
