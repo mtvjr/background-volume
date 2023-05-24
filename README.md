@@ -1,7 +1,7 @@
 # Background Volume
 
 ![Minimum Foundry Version: 0.8.9](https://img.shields.io/badge/Minimum_Foundry_Version-0.8.9-green?style=plastic)
-![Compatible Foundry Version: 10 288](https://img.shields.io/badge/Supported_Foundry-Version_10_(Build_288)-green?style=plastic)
+![Compatible Foundry Version: 11 299](https://img.shields.io/badge/Supported_Foundry-Version_11_(Build_299)-green?style=plastic)
 
 This mod allows the DM to configure the volume of a scene's background in Foundry VTT.
 
@@ -10,7 +10,7 @@ The final background volume is controlled by both the ambient slider and the sce
 ## How to set the background volume as the DM
 
 1. Open the scene configuration menu.
-2. Adjust the "Background Volume" slider under the **Ambience and Atmosphere** heading.
+2. Adjust the "Background Volume" slider under the **Ambience and Atmosphere** tab.
 3. Click save.
 
 ![Visual Aid](images/slider.png)
