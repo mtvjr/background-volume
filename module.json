@@ -2,7 +2,6 @@
     "id": "background-volume",
     "title": "Background Volume",
     "description": "A module for setting the volume of background videos",
-    "author": "Michael Volling",
     "authors": [
         {
             "name": "Michael Volling",
@@ -24,8 +23,7 @@
     "version": "1.6.0",
     "compatibility": {
         "minimum": "11",
-        "maximum": "12",
-        "verified": "12.322"
+        "verified": "12.331"
     },
     "url": "https://github.com/mtvjr/background-volume",
     "readme": "https://github.com/mtvjr/background-volume/blob/master/README.md",
