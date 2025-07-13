@@ -5,6 +5,7 @@ import Templates from "./templates.mjs"
 const MODULE_NAME = "background-volume";
 const VOLUME_FLAG = "volume";
 const SLIDER_ID = "bvSlider";
+const renderTemplate = foundry.applications.handlebars.renderTemplate;
 
 /**
  * Get the background volume of a scene
@@ -46,18 +47,18 @@ function localize(key) {
 /**
  * Adds a Background Volume scene slider to a SceneConfig
  * @param {SceneConfig} sceneConfig - A SceneConfig object
- * @param html - The JQuery HTML object representing the scene config
+ * @param form - The form DOM object representing the scene config
  * @param data - The data used to populate sceneConfig
  */
-export async function createSceneSlider(sceneConfig, html, data) {
+export async function createSceneSlider(sceneConfig, form, data) {
     Logger.log(Logger.Medium, "Creating scene slider");
 
-    var scene = sceneConfig.object;
+    var scene = sceneConfig.document;
     const oldVolume = getVolume(scene);
 
     const sliderHTML = await renderTemplate(Templates.SceneSlider, {
         label: localize("slider-title"),
-        notes: localize("slider-note"),
+        hint: localize("slider-hint"),
         id: SLIDER_ID,
         value: oldVolume,
         max: 1,
@@ -70,20 +71,20 @@ export async function createSceneSlider(sceneConfig, html, data) {
         return;
     }
 
-    const sliderDiv = $(sliderHTML)[0];
+    var sliderDiv = $.parseHTML(sliderHTML)[0];
 
     // Find the 'Journal Notes' option and add the background volume config option before it
     // This should place it near the top of the 'Ambience and Atmosphere' section
-    html.find("select[name='journal']").parent().before(sliderDiv).before("<hr>");
+    const basicOptions = form.querySelector("div[data-group='ambience'][data-tab='basic']");
+    basicOptions.insertBefore(sliderDiv, basicOptions.firstChild);
 
-    const sliderInput = html.find(`#${SLIDER_ID}`);
+    const sliderInput = form.querySelector(`#${SLIDER_ID}`);
 
     // Save changes to the slider when the form is being saved
-    const form = html.find('form');
-    form.submit(async () => {
-        const newVolume = parseFloat(sliderInput.val());
-        await setVolume(scene, newVolume);
-    })
+    form.addEventListener('submit', () => {
+        const newVolume = parseFloat(sliderInput.value);
+        setVolume(scene, newVolume);
+    });
 
     // Reposition the form to accomidate the new contents
     sceneConfig.setPosition();

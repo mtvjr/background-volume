@@ -3,5 +3,5 @@
     "I18N.MAINTAINERS": "@Viriato139ac#0342",
 	
     "background-volume.slider-title": "Volumen de fondo",
-    "background-volume.slider-note": "Cuando se usa un vídeo como imagen de fondo, permite ajustar el volumen del mismo"
+    "background-volume.slider-hint": "Cuando se usa un vídeo como imagen de fondo, permite ajustar el volumen del mismo"
 }
